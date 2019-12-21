@@ -11,4 +11,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.springboot.shiroproject.entity.User;
 
 public interface UserInfoDao extends BaseMapper<User> {
+    String selectPasswordByName(String userName);
 }

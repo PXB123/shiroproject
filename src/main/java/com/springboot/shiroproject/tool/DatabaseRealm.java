@@ -9,6 +9,7 @@ package com.springboot.shiroproject.tool;
 
 import java.util.Set;
 
+import com.springboot.shiroproject.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,8 +19,11 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class DatabaseRealm extends AuthorizingRealm {
+    @Autowired
+    private UserService userService;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
@@ -44,7 +48,7 @@ public class DatabaseRealm extends AuthorizingRealm {
         String userName= token.getPrincipal().toString();
         String password= new String( t.getPassword());
         //获取数据库中的密码
-        String passwordInDB = new DAO().getPassword(userName);
+        String passwordInDB = userService.selectPasswordByName(userName);
 
         //如果为空就是账号不存在，如果不相同就是密码错误，但是都抛出AuthenticationException，而不是抛出具体错误原因，免得给破解者提供帮助信息
         if(null==passwordInDB || !passwordInDB.equals(password))
