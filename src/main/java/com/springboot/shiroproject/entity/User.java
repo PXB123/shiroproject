@@ -7,9 +7,11 @@
  **/
 package com.springboot.shiroproject.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import org.springframework.stereotype.Component;
 
 @Component
+@TableName("user")
 public class User {
 
     private String name;

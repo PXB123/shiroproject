@@ -7,6 +7,7 @@
  **/
 package com.springboot.shiroproject.tool;
 
+import java.util.List;
 import java.util.Set;
 
 import com.springboot.shiroproject.service.UserService;
@@ -30,14 +31,14 @@ public class DatabaseRealm extends AuthorizingRealm {
         //能进入到这里，表示账号已经通过验证了
         String userName =(String) principalCollection.getPrimaryPrincipal();
         //通过DAO获取角色和权限
-        Set<String> permissions = new DAO().listPermissions(userName);
-        Set<String> roles = new DAO().listRoles(userName);
+        List<String> permissions = userService.listPermissions(userName);
+        List<String> roles = userService.listRoles(userName);
 
         //授权对象
         SimpleAuthorizationInfo s = new SimpleAuthorizationInfo();
         //把通过DAO获取到的角色和权限放进去
-        s.setStringPermissions(permissions);
-        s.setRoles(roles);
+        s.addStringPermissions(permissions);
+        s.addRoles(roles);
         return s;
     }
 

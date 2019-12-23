@@ -10,6 +10,12 @@ package com.springboot.shiroproject.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.springboot.shiroproject.entity.User;
 
+import java.util.List;
+
 public interface UserInfoDao extends BaseMapper<User> {
     String selectPasswordByName(String userName);
+
+    List<String> listPermissions(String userName);
+
+    List<String> listRoles(String userName);
 }
