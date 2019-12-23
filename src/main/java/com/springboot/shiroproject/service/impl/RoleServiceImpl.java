@@ -2,7 +2,7 @@ package com.springboot.shiroproject.service.impl;
 
 import com.springboot.shiroproject.entity.Role;
 import com.springboot.shiroproject.mapper.RoleMapper;
-import com.springboot.shiroproject.service.IRoleService;
+import com.springboot.shiroproject.service.RoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-12-23
  */
 @Service
-public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IRoleService {
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 
 }

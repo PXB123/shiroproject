@@ -1,12 +1,13 @@
 package com.springboot.shiroproject.service;
 
+import com.springboot.shiroproject.entity.User;
+import com.springboot.shiroproject.entity.UserRole;
+
 import java.util.List;
-import java.util.Set;
 
 public interface UserService {
-    String selectPasswordByName(String userName);
+    User selectPasswordByName(String userName);
 
-    List<String> listPermissions(String userName);
+    List<UserRole> listRoles(String uid);
 
-    List<String> listRoles(String userName);
 }

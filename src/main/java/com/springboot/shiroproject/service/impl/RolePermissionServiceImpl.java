@@ -2,7 +2,7 @@ package com.springboot.shiroproject.service.impl;
 
 import com.springboot.shiroproject.entity.RolePermission;
 import com.springboot.shiroproject.mapper.RolePermissionMapper;
-import com.springboot.shiroproject.service.IRolePermissionService;
+import com.springboot.shiroproject.service.RolePermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-12-23
  */
 @Service
-public class RolePermissionServiceImpl extends ServiceImpl<RolePermissionMapper, RolePermission> implements IRolePermissionService {
+public class RolePermissionServiceImpl extends ServiceImpl<RolePermissionMapper, RolePermission> implements RolePermissionService {
 
 }

@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 蒲雪冰
  * @since 2019-12-23
  */
-public interface IRolePermissionService extends IService<RolePermission> {
+public interface RolePermissionService extends IService<RolePermission> {
 
 }
