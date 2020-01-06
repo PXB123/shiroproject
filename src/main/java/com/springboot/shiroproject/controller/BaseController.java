@@ -20,16 +20,14 @@ public class BaseController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object handlerException(HttpServletRequest request, Exception ex){
-        Map<String,Object> responseData = new HashMap<>();
         if(ex instanceof BusinessException){
             BusinessException businessException = (BusinessException)ex;
-            responseData.put("errCode",businessException.getErrCode());
-            responseData.put("errMsg",businessException.getErrMsg());
+            return  CommonReturnType.create(null,businessException.getErrCode()
+                    ,businessException.getErrMsg());
         } else{
-            System.out.println(ex);
-            responseData.put("errCode", EnumBusinessError.UNKNOWN_ERROR.getErrCode());
-            responseData.put("errMsg",EnumBusinessError.UNKNOWN_ERROR.getErrMsg());
+            return  CommonReturnType.create(null,EnumBusinessError.UNKNOWN_ERROR.getErrCode()
+                    ,EnumBusinessError.UNKNOWN_ERROR.getErrMsg());
         }
-        return  CommonReturnType.create(responseData,"fail");
+
     }
 }

@@ -1,6 +1,6 @@
 /**
  * <h3>shiroproject</h3>
- * <p></p>
+ * <p>Shiro配置</p>
  *
  * @author : 蒲雪冰
  * @date : 2019-12-28 15:25
