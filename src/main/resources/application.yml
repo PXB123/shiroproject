@@ -8,6 +8,17 @@ spring:
     username: root
     password: ROOT_root123
     type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 101.132.156.78
+    port: 6379
+    timeout: 5000
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 3000
+        max-idle: 20
+        min-idle: 2
 
 # mybatis-plus
 mybatis-plus:

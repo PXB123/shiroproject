@@ -4,6 +4,7 @@ package com.springboot.shiroproject.controller;
 import com.springboot.shiroproject.entity.User;
 import com.springboot.shiroproject.response.CommonReturnType;
 import com.springboot.shiroproject.tool.RandomValidateCodeUtil;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @RestController
 public class UserController extends BaseController{
+    @ApiOperation(value = "登录", notes="登录")
     @GetMapping("/doLogin")
     public CommonReturnType doLogin() {
         Object principal = null;
