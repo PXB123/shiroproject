@@ -5,7 +5,7 @@
  * @author : 蒲雪冰
  * @date : 2020-01-06 20:40
  **/
-package com.springboot.shiroproject.tool;
+package com.springboot.shiroproject.config;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;

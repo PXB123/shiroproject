@@ -6,6 +6,7 @@ import com.springboot.shiroproject.error.BusinessException;
 import com.springboot.shiroproject.error.EnumBusinessError;
 import com.springboot.shiroproject.response.CommonReturnType;
 import com.springboot.shiroproject.service.UserService;
+import com.springboot.shiroproject.tool.MD5Util;
 import com.springboot.shiroproject.tool.RandomValidateCodeUtil;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
@@ -66,6 +67,14 @@ public class UserController extends BaseController{
     public CommonReturnType getUserList(){
         List<User> list = userService.list();
         return CommonReturnType.create(list);
+    }
+
+    @ApiOperation(value = "新增用户", notes="新增用户")
+    @PostMapping("/addUser")
+    public CommonReturnType addUser(@RequestBody  User user){
+        MD5Util.md5(user);
+        userService.save(user);
+        return CommonReturnType.create(user);
     }
 
     /**

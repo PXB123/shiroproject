@@ -5,9 +5,9 @@
  * @author : 蒲雪冰
  * @date : 2019-12-28 15:25
  **/
-package com.springboot.shiroproject.tool;
+package com.springboot.shiroproject.config;
 
-import org.apache.shiro.authc.credential.CredentialsMatcher;
+import com.springboot.shiroproject.common.MyRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;

@@ -5,9 +5,8 @@
  * @author : 蒲雪冰
  * @date : 2020-01-07 19:39
  **/
-package com.springboot.shiroproject.tool;
+package com.springboot.shiroproject.config;
 
-import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;

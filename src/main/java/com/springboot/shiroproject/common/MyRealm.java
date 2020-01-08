@@ -5,9 +5,8 @@
  * @author : 蒲雪冰
  * @date : 2019-12-20 11:48
  **/
-package com.springboot.shiroproject.tool;
+package com.springboot.shiroproject.common;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springboot.shiroproject.entity.*;
 import com.springboot.shiroproject.service.*;
@@ -21,7 +20,6 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MyRealm extends AuthorizingRealm {

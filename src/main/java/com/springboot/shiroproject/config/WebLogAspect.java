@@ -5,14 +5,12 @@
  * @author : 蒲雪冰
  * @date : 2020-01-06 10:08
  **/
-package com.springboot.shiroproject.tool;
+package com.springboot.shiroproject.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
