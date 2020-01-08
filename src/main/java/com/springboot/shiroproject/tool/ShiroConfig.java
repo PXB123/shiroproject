@@ -48,11 +48,24 @@ public class ShiroConfig {
     ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         bean.setSecurityManager(securityManager());
+        //登录页面
         bean.setLoginUrl("/login");
+        //登录成功页面
         bean.setSuccessUrl("/index");
+        //未授权页面
         bean.setUnauthorizedUrl("/unauthorizedurl");
         Map<String, String> map = new LinkedHashMap<>();
+        map.put("/css/*", "anon");
+        map.put("/js/*", "anon");
+        map.put("/img/*", "anon");
+        map.put("/html/*", "anon");
+        map.put("/swagger-ui.html", "anon");
+        map.put("/swagger-resources/**", "anon");
+        map.put("/webjars/**", "anon");
+        map.put("/v2/**", "anon");
         map.put("/doLogin", "anon");
+        map.put("/getVerify", "anon");
+
         map.put("/**", "authc");
         bean.setFilterChainDefinitionMap(map);
         return bean;

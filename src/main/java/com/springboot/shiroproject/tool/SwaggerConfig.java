@@ -32,9 +32,10 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("spring-boot-demo")
-                .description("这是一个简单的 Swagger API 演示")
-                .contact(new Contact("Yangkai.Shen", "http://127.0.0.1:8080", "237497819@qq.com"))
+        return new ApiInfoBuilder()
+                .title("项目后台API测试")
+                .description("项目的主要后台API列表")
+                .contact(new Contact("蒲雪冰", "http://127.0.0.1:8080", "2679862469@qq.com"))
                 .version("1.0.0-SNAPSHOT")
                 .build();
     }
